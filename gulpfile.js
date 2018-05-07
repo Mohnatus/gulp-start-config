@@ -38,6 +38,16 @@ gulp.task('pug', function() {
     .pipe(reload())
 });
 
+gulp.task('php', function() {
+  return gulp.src('./src/pug/pages/*.pug')
+    .pipe(using({}))
+    .pipe(plumber())
+    .pipe(pug({ pretty: true, data: configuration.pugData }))
+    .pipe(rename({ extname: ".php" }))
+    .pipe(gulp.dest(configuration.outputFolder))
+    
+})
+
 gulp.task('scss', function() {
   return gulp.src('./src/scss/styles/*.scss')
     .pipe(using({}))
@@ -141,7 +151,7 @@ gulp.task('cleanDevelopment', function() {
 });
 
 gulp.task('default', ['watcher', 'browser-sync', 'moveData', 'media', 'es6', 'scss', 'pug']);
-gulp.task('production', ['setProduction', 'moveData', 'media', 'es6', 'scss', 'pug']);
+gulp.task('production', ['setProduction', 'moveData', 'media', 'es6', 'scss', 'php']);
 
 
 

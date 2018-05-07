@@ -1,9 +1,18 @@
+extend ../templates/main.pug
 
-include ../elements/module.pug
+block topHead
+	-var styleFile = "style.css"
+	-var title = "Page title"
+	-var description = "..description"
 
-doctype html
-html(lang="ru")
-	head
+block bottomHead
+
+block topBody
+
+block content
+
+block bottomBody
+
+
+
 		
-	body
-		+module
