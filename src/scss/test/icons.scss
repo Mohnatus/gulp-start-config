@@ -1,0 +1,16 @@
+.party-icon {
+  position: relative;
+
+  &.animated {
+    .icon-path {
+      stroke-dasharray: 60;
+      stroke-dashoffset: 60;
+      animation: dash $iconAnimationDuration linear forwards;
+    }
+  }
+}
+
+@keyframes dash {
+    from{ stroke-dashoffset: 60; }
+    to { stroke-dashoffset: 0; }
+}

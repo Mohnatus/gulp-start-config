@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption&subset=cyrillic');
+
+// @font-face {
+//   font-family: Comfortaa;
+//   src: url(/ii/fonts/Comfortaa/Comfortaa-Bold.ttf);
+// }
+
+$imgSrcBase: '../img/';
+
+$mainFontFamily: 'Comfortaa', 'PT Sans', sans-serif;
+$secondFontFamily: 'PT Sans', sans-serif;
+$thirdFontFamily: 'PT Sans Caption', 'PT Sans', sans-serif;
+
+$blueColor: #26A9E0;
+
+$logoTextGrayColor: #4D4D4D;
+
+$containerWidth: 980px;
+$halfContainerWidth: 440px;
+
+$minWidth: 1200px;
+
+$headerFontFamily: $secondFontFamily;
+$headerHeight: 80px;
+$headerLogoWidth: 247px;
+$headerLogoHeight: 44px;
+
+$footerFontFamily: $secondFontFamily;
+$footerHeight: 72px;
+
+$socialItemSize: 40px;
+$socialStartOpacity: 0.5;
+$socialItemRadius: 0;
+$socialItemLeftMargin: 0px;
+$socialItemRightMargin: 0px;
+
+$headerMenuStartOpacity: 0.6;
+$headerMenuLeftMargin: 40px;
+$headerMenuRightMargin: 0;
+
+$headerMenuFontSize: 18px;
+
+$footerMenuFontSize: 14px;
+$footerMenuStartOpacity: 0.6;
+$footerMenuLeftMargin: 0px;
+$footerMenuRightMargin: 30px;
+
+$shadow1: 10px 10px 10px rgba(0, 0, 0, 0.2);
+$headerShadow:  0px -1px 0 rgba(255, 255, 255, 0.2) inset;
+
+
+$paragraphMargin: 20px;
+
+
+@mixin flex-column-center {
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+
+@mixin flex-row-center {
+  display: flex; justify-content: center; align-items: center;
+}
+
+

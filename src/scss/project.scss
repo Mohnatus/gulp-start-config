@@ -1,0 +1,137 @@
+
+$alphaPurpleColor: rgba(166, 47, 155, 0.9);
+$alphaGreenColor: rgba(48, 190, 166, 0.75);
+$alphaYellowColor: #FFC550;
+$alphaPinkColor: #F975B8;
+
+$partyPurpleColor: #A62F9B;
+$partyGreenColor: #30BEA6;
+$partyYellowColor: #FDB812;
+$partyPinkColor: #EE5BA0;
+
+$partyPurpleHover: #BC3FB6;
+$partyYellowHover: #FFC550;
+$partyPinkHover: #F975B8;
+$partyGreenHover: #45CEB3;
+
+.bg {
+  &_purple { background-color: $partyPurpleColor; }
+  &_green { background-color: $partyGreenColor; }
+  &_pink { background-color: $partyPinkColor; }
+  &_yellow { background-color: $partyYellowColor; }
+}
+
+.color {
+  &-purple { color: $partyPurpleColor; }
+  &-green { color: $partyGreenColor; }
+  &-white { color: white; }
+}
+
+.party {
+  font-family: 'Comfortaa', 'PT Sans', sans-serif;
+  font-weight: bold;
+  position: relative;
+
+  a { color: inherit; }
+
+  .landing-header {
+    background: $alphaPurpleColor;
+    box-shadow: $headerShadow;
+  }
+
+
+  main { padding-top: $headerHeight; }
+
+  &-purple { color: $partyPurpleColor; }
+  &-green { color: $partyGreenColor; }
+  &-white { color: white; }
+
+  &-big {
+     font-family: $mainFontFamily;
+     font-size: 30px; line-height: 33px;
+     font-weight: bold;
+  }
+
+  &-huge {
+    font-size: 36px; line-height: 40px;
+    font-weight: bold;
+  }
+
+  &-description {
+    font-family: $secondFontFamily;
+    font-weight: normal;
+    font-size: 18px; line-height: 23px;
+  }
+
+  .landing-footer {
+    background: $partyPinkColor;
+  }
+}
+
+.party-header {
+  flex-grow: 1;
+  padding-top: 202px; padding-bottom: 178px;
+  font-size: 18px; line-height: 23px;
+  height: 720px;
+
+  @include flex-column-center;
+
+  &__card {
+    flex-shrink: 0;
+    background: white;
+    box-shadow: $shadow1;
+    padding-top: 50px;
+    padding-left: 40px; padding-right: 40px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 48px; font-weight: bold;
+    line-height: 54px;
+    small {
+      display: block;
+      text-align: right;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .party-header { background-size: cover; }
+}
+
+.party-button {
+    display: inline-block;
+    padding: 25px 35px;
+    color: white!important;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size:18px; line-height: 20px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    font-family: $mainFontFamily!important;
+
+    &:focus, &:hover, &:active {
+      box-shadow: none;
+      outline: none;
+    }
+
+    &.bg_green:hover {
+      background-color: $partyGreenHover;
+    }
+
+    &.bg_purple:hover {
+      background-color: $partyPurpleHover;
+    }
+
+    &.bg_pink:hover {
+      background-color: $partyPinkHover;
+    }
+
+    &.bg_yellow:hover {
+      background-color: $partyYellowHover;
+    }
+  }
+
+  

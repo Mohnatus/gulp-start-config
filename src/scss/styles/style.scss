@@ -1,0 +1,3 @@
+$redColor: red;
+@import '../parts/module.scss';
+.block { background: url($mediaFolder + "img.png"); }
