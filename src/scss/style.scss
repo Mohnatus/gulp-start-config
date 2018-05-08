@@ -1,41 +1,14 @@
 @import './vars.scss';
 
-* { margin: 0; padding: 0; }
-body { font-family: $mainFontFamily; }
-.landing * { box-sizing: border-box;  }
-.landing { 
-  min-width: $minWidth;
-  overflow: hidden;
-  .container {
-    max-width: $containerWidth;
-    width: 100%;
-    padding-left: 20px; padding-right: 20px;
-    margin-left: auto; margin-right: auto;
-  }
-  &-halfs {
-    display: flex; width: 100%;
-  }
-  &-half {
-    width: 50%;
-    display: flex;
-    &_left {
-      justify-content: flex-end;
-    }
-    &_right {
-      justify-content: flex-start;
-    }
-  }
-  .link {
-    color: inherit; text-decoration: none;
-    &:hover { text-decoration: underline; }
-  }
-  .text-center {
-    text-align: center;
-  }
-  p {
-    margin-top: $paragraphMargin;
-    margin-bottom: $paragraphMargin;
-  }
-}
+$headerFontFamily: $PTSansFont;
+$footerFontFamily: $PTSansFont;
+$mainFontFamily: $PTSansFont;
+$buttonFontFamily: $PTSansFont;
 
-@import './runningTitles.scss';
+$mainFontSize: $fs4;
+
+
+@import './mixins.scss';
+@import 'landing/main.scss';
+
+

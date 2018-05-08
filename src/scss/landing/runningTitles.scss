@@ -43,6 +43,7 @@
   font-weight: normal;
   height: $headerHeight;
   position: relative;
+  box-shadow: $headerShadow;
   
   .container {
     display: flex; justify-content: space-between; align-items: center;
