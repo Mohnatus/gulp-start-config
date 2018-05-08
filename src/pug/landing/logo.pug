@@ -1,7 +1,7 @@
-mixin logoWithoutLink(className, width, height)
-  - var className = className || "blue"
-  - var width = width || 247
-  - var height = height || 44
+mixin logoWithoutLink(logo)
+  - var className = logo.class || "blue"
+  - var width = logo.width || 247
+  - var height = logo.height || 44
 
   svg(width=width height=height viewBox="0 0 247 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="transparent" class=className)
     style.
@@ -131,5 +131,5 @@ mixin logoWithoutLink(className, width, height)
     </defs>
 
 mixin logo(className, width, height)
-  a(href="/")
+  a.landing-header__logo(href="/")
     +logoWithoutLink(className, width, height)

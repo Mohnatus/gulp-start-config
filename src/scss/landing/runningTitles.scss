@@ -44,6 +44,8 @@
   height: $headerHeight;
   position: relative;
   box-shadow: $headerShadow;
+  background: $headerBackground;
+  color: $headerColor;
   
   .container {
     display: flex; justify-content: space-between; align-items: center;
@@ -55,9 +57,6 @@
 
     svg { 
       width: $headerLogoWidth; height: $headerLogoHeight; 
-
-      #big-logo { fill: white; }
-      #logo-text { fill: white; }
     }
   }
 
@@ -74,24 +73,6 @@
   }
 }
 
-.landing-header__white {
-  .landing-header__logo {
-    svg {
-      #big-logo { fill: $blueColor; }
-      #logo-text { fill: $logoTextGrayColor; }
-    }
-  }
-  .social-list__item {
-    background: $blueColor;
-  }
-}
-
-.landing-header__fixed {
-  position: fixed;
-  top: 0; 
-  left: 0; right: 0;
-  z-index: 90;
-}
 
 .landing-footer {
   font-family: $footerFontFamily;

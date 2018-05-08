@@ -33,7 +33,7 @@ module.exports = {
       jsFolder: js
     },
     scssData: `
-      $mediaFolder: "${media}";
+      $mediaFolder: "../${media}";
       $cssFolder:" ${css}";
       $jsFolder: "${js}";
     `,

@@ -24,6 +24,10 @@ body { font-family: $mainFontFamily; }
     margin-top: $paragraphMargin;
     margin-bottom: $paragraphMargin;
   }
+
+  &.fix-header {
+    @include fix-header;
+  }
 }
 
 

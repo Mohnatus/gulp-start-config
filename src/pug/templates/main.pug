@@ -2,6 +2,9 @@ include ../configs/config.pug
 include ../elements/head.pug
 include ../elements/bitrixAuth.pug
 
+-var projectName = 'pratchett';
+-var imgUrl = mediaFolder + projectName + '/';
+
 if mode === "production"
   +bitrixHeader
 doctype html
