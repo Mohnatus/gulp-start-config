@@ -1,0 +1,42 @@
+.first-text {
+  font-size: $firstFontSize;
+  font-weight: $firstFontWeight;
+  font-style: $firstFontStyle;
+  letter-spacing: $firstLetterSpacing;
+  text-transform: $firstTextTransform;
+}
+.second-text {
+  font-size: $secondFontSize;
+  font-weight: $secondFontWeight;
+  font-style: $secondFontStyle;
+  letter-spacing: $secondLetterSpacing;
+  text-transform: $secondTextTransform;
+}
+.third-text {
+  font-size: $thirdFontSize;
+  font-weight: $thirdFontWeight;
+  font-style: $thirdFontStyle;
+  letter-spacing: $thirdLetterSpacing;
+  text-transform: $thirdTextTransform;
+}
+.first-header {
+  font-size: $firstHeaderFontSize;
+  font-weight: $firstHeaderFontWeight;
+  font-style: $firstHeaderFontStyle;
+  letter-spacing: $firstHeaderLetterSpacing;
+  text-transform: $firstHeaderTextTransform;
+}
+.second-header {
+  font-size: $secondHeaderFontSize;
+  font-weight: $secondHeaderFontWeight;
+  font-style: $secondHeaderFontStyle;
+  letter-spacing: $secondHeaderLetterSpacing;
+  text-transform: $secondHeaderTextTransform;
+}
+.third-header {
+  font-size: $thirdHeaderFontSize;
+  font-weight: $thirdHeaderFontWeight;
+  font-style: $thirdHeaderFontStyle;
+  letter-spacing: $thirdHeaderLetterSpacing;
+  text-transform: $thirdHeaderTextTransform;
+}

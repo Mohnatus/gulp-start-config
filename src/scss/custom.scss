@@ -1,0 +1,117 @@
+$projectName: 'puzzle';
+$imgUrl: $mediaFolder + $projectName + '/';
+$breakpointFirst: 1320px;
+
+$minWidth: 1000px;
+$maxWidth: 1260px;
+
+$colBigWidthMin: 570px;
+$colBigWidthMax: 750px;
+$colsPaddingMin: 30px;
+$colsPaddingMax: 40px;
+
+$screenPaddingMin: 60px;
+//$screenPaddingMax: 140px;
+$screenPaddingMax: 100px;
+
+$sideWidthMin: 200px;
+$sideWidthMax: 240px;
+$sidePaddingMin: 48px;
+$sidePaddingMax: 68px;
+
+$portraitSideHeight: 100px;
+
+$sideAnimationDuration: 600ms;
+$screenFadeInAnimationDuration: 300ms;
+
+$mainFontFamily: $IBMPlexSansFont; // body font-family
+$mainFontSize: $fs5; // html font-size
+$mainLineHeight: 1.2; // html line-height
+$mainColor: $darkBlueColor; // body color
+
+$firstColor: $mainColor;
+$secondColor: $filwordLimeColor;
+
+//.first-text 
+$firstFontSize: $mainFontSize;
+$firstFontWeight: normal;
+$firstFontStyle: normal;
+$firstLetterSpacing: 1;
+$firstTextTransform: normal;
+
+//.second-text
+$secondFontSize: $fs3;
+$secondFontWeight: normal;
+$secondFontStyle: normal;
+$secondLetterSpacing: 1;
+$secondTextTransform: normal;
+
+//.third-text
+$thirdFontSize: $fs2;
+$thirdFontWeight: 500;
+$thirdFontStyle: normal;
+$thirdLetterSpacing: 0.03em;
+$thirdTextTransform: uppercase;
+
+//.first-header 
+$firstHeaderFontSize: $mainFontSize;
+$firstHeaderFontWeight: normal;
+$firstHeaderFontStyle: normal;
+$firstHeaderLetterSpacing: 1;
+$firstHeaderTextTransform: normal;
+
+//.second-header
+$secondHeaderFontSize: $fs3;
+$secondHeaderFontWeight: normal;
+$secondHeaderFontStyle: normal;
+$secondHeaderLetterSpacing: 1;
+$secondHeaderTextTransform: normal;
+
+//.third-header
+$thirdHeaderFontSize: $fs2;
+$thirdHeaderFontWeight: 500;
+$thirdHeaderFontStyle: normal;
+$thirdHeaderLetterSpacing: 0.03em;
+$thirdHeaderTextTransform: uppercase;
+
+// buttons
+$buttonFontFamily: inherit;
+
+$buttonBorderWidth: 2px;
+$buttonBorderStyle: solid;
+$buttonBorderColor: white;
+$buttonHoverBorderWidth: 2px;
+$buttonHoverBorderStyle: solid;
+$buttonHoverBorderColor: $secondColor;
+
+$buttonBoxShadow: none;
+$buttonHoverBoxShadow: none;
+$buttonBorderRadius: 0px;
+$buttonTextTransform: uppercase;
+$buttonLetterSpacing: 0.03em;
+
+
+$bigButtonMinWidth: 200px;
+$bigButtonHeight: 60px;
+$bigButtonPadding: 0 25px;
+$bigButtonFontSize: 16px;
+
+$mediumButtonMinWidth: 200px;
+$mediumButtonHeight: 50px;
+$mediumButtonPadding: 0 25px;
+$mediumButtonFontSize: 26px;
+
+$smallButtonMinWidth:122px;
+$smallButtonHeight: 40px;
+$smallButtonPadding: 0 25px;
+$smallButtonFontSize: 12px;
+
+//.link
+$linkTextDecoration: none;
+$linkHoverTextDecoration: none;
+$linkFontWeight: normal;
+$linkFontStyle: normal;
+$linkLetterSpacing: 0.03em;
+$linkColor: inherit;
+$linkHoverColor: $secondColor;
+

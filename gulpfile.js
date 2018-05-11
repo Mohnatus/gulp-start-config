@@ -9,6 +9,7 @@ const gulp = require('gulp'),
       concat = require('gulp-concat'),
       rename = require('gulp-rename'),
       uglify = require('gulp-uglify'),
+      sourcemaps = require('gulp-sourcemaps'),
       using = require('gulp-using'),
       plumber = require('gulp-plumber'),
       clean = require('gulp-clean'),
@@ -52,9 +53,11 @@ gulp.task('scss', function() {
   return gulp.src('./src/scss/styles/*.scss')
     .pipe(using({}))
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(scss.sync({
       data: configuration.scssData
     }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(configuration.outputFolder + 'css'))
     .pipe(scss({outputStyle: 'compressed'}))
     .pipe(rename({suffix: '.min'}))
@@ -88,6 +91,13 @@ gulp.task('moveData', function() {
     .pipe(gulp.dest(configuration.outputFolder + 'data'))
 });
 
+gulp.task('moveLibs', function() {
+  gulp.src('./src/es6/libs/**/*.*')
+    .pipe(using({}))
+    .pipe(plumber())
+    .pipe(gulp.dest(configuration.outputFolder + 'libs'))
+});
+
 gulp.task('media', function() {
   gulp.src('./src/media/**/*.*')
     .pipe(using({}))
@@ -103,7 +113,14 @@ gulp.task('watcher', function() {
     gulp.start('scss');
   });
   gulp.watch('./src/es6/**/*.js', (event, sb) => {
+    gulp.start('moveLibs');
     gulp.start('es6');
+  });
+  gupl.watch('./src/data/**/*.*', (event, sb) => {
+    gulp.start('moveData');
+  });
+  gupl.watch('./src/media/**/*.*', (event, sb) => {
+    gulp.start('media');
   });
 });
 
@@ -150,8 +167,8 @@ gulp.task('cleanDevelopment', function() {
     .pipe(clean({forse: true}))
 });
 
-gulp.task('default', ['watcher', 'browser-sync', 'moveData', 'media', 'es6', 'scss', 'pug']);
-gulp.task('production', ['setProduction', 'moveData', 'media', 'es6', 'scss', 'php']);
+gulp.task('default', ['watcher', 'browser-sync', 'moveData', 'moveLibs', 'media', 'es6', 'scss', 'pug']);
+gulp.task('production', ['setProduction', 'moveData', 'moveLibs', 'media', 'es6', 'scss', 'php']);
 
 
 

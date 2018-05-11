@@ -1,0 +1,24 @@
+.button {
+  @include button;
+
+  &_big {
+    min-width: $bigButtonMinWidth;
+    height: $bigButtonHeight;
+    padding: $bigButtonPadding;
+    font-size: $bigButtonFontSize;
+  }
+
+  &_medium {
+    min-width: $mediumButtonMinWidth;
+    height: $mediumButtonHeight;
+    padding: $mediumButtonPadding;
+    font-size: $mediumButtonFontSize;
+  }
+
+  &_small {
+    min-width: $smallButtonMinWidth;
+    height: $smallButtonHeight;
+    padding: $smallButtonPadding;
+    font-size: $smallButtonFontSize;
+  }
+}

@@ -1,6 +1,7 @@
 include ../configs/config.pug
 include ../elements/head.pug
 include ../elements/bitrixAuth.pug
+include ../elements/analytics.pug
 
 -var projectName = 'pratchett';
 -var imgUrl = mediaFolder + projectName + '/';
@@ -13,11 +14,17 @@ html(lang="ru")
     block topHead
     +head
     block bottomHead
-  body
-    block topBody
     if mode === "production"
-      +bitrixAuth
+      +headAnalytics
+  body
+    if mode === "production"
+      +topBodyAnalytics
+    block topBody
     block content
     if mode === "production"
+      +bitrixAuth
       +bitrixAuthScripts
+    
     block bottomBody
+    if mode === "production"
+        +bottomBodyAnalytics
