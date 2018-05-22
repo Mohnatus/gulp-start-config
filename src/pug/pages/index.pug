@@ -1,14 +1,40 @@
 extend ../templates/main.pug
 
-include ../landing/header.pug
-include ../new-shop/header.pug
+
 
 block topHead
+	include ../elements/links.pug
+	include ../landing/header.pug
+	include ../landing/footer.pug
+	include ../new-shop/header.pug
+	include ../new-shop/map.pug
+	include ../new-shop/rules.pug
 	-var styleFile = "style.css"
 	-var title = "Page title"
 	-var description = "..description"
+	-
+		var footerMenu = [
+			{
+				title: 'Книги',
+				link: '/catalog/books/'
+			},{
+				title: 'Канцтовары',
+				link: '/catalog/kanctovar/'
+			},{
+				title: 'Сувениры',
+				link: '/catalog/souvenirs/'
+			},{
+				title: 'Акции',
+				link: '/actions/'
+			},{
+				title: 'Что ещё почитать?',
+				link: '/collections/'
+			}
+		];
 
 block bottomHead
+	+jQuery
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
 block topBody
 
@@ -17,8 +43,36 @@ block content
 		+landingHeader({class:"white"}, {type: "menu", data: [{"link": "", "title": "Скидка 10%"}, {"link": "", "title": "Акции"}]})
 		main
 			+newShopHeader
+			+newShopInfo
+			+newShopRules
+		+landingFooter({menu: footerMenu})
 
 block bottomBody
+	script.
+		$(document).ready(function() {
+			$('.hiddenbox__title').click(function() {
+				$(this).parent().removeAttr('data-hidden');
+			});
+		});
+		var myMap;
+		var lat = 55.76;
+		var lng = 37.64;
+		ymaps.ready(function() {
+			myMap = new ymaps.Map('map', {
+				center: [lat, lng],
+				controls: [],
+				zoom: 11
+			});
+			myPlacemark = new ymaps.Placemark([lat, lng], { 
+				hintContent: 'Москва!', 
+				balloonContent: 'Столица России' 
+			});
+			myMap.geoObjects.add(myPlacemark);
+		});
+
+		
+
+		
 
 
 

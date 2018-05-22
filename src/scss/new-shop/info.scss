@@ -1,0 +1,62 @@
+.new-shop {
+  &__info {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
+    
+  }
+  &__map {
+    width: 400px;
+    flex-shrink: 0;
+  }
+  &__actions {
+    width: 400px;
+    background: $deepBlueColor;
+    color: white;
+    margin-left: 30px;
+  }
+
+  .actions__title {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .action {
+    margin: 20px 0;
+    &__title {
+      font-size: 20px;
+    }
+
+    &__description {
+
+    }
+  }
+
+  &__map {
+
+  }
+
+  .map-container {
+    position: relative;
+    display: flex;
+    height: 100%;
+  }
+  .map-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+  }
+
+  #map {
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+  }
+}
+

@@ -1,0 +1,31 @@
+mixin map
+  .new-shop__map
+    .map-container
+      #map
+      .map-label
+        .map-label__info
+          .map-label__city г. Владикавказ
+          .map-label__address Московское шоссе, 3к, ТЦ Алания Молл, магазин Читай-город
+          .map-label__time 10:00 - 22:00
+        .map-label__link
+          a(href="#") Подробнее
+
+
+mixin actions
+  .new-shop__actions
+    .actions__title Текущие акции
+    .action
+      .action__title Книга месяца
+      .action__description Уникальный экземпляр Том Хэнкс
+    .action
+      .action__title Книга месяца для детей
+      .action__description Винни-Пух и все-все-все Алан Милн
+    .action
+      .action__title Товар месяца
+      .action__description 3 черные гелевые ручки по цене 2-х
+
+mixin newShopInfo
+  .new-shop__info
+    .container
+      +map
+      +actions

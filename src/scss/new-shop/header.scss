@@ -3,8 +3,18 @@
     background: $deepBlueColor;
     height: 640px;
     color: white;
-    padding-top: 80px;
+    
+
+    .container {
+      height: 100%;
+      padding-top: 80px;
+      background-image: url($imgUrl + 'vladikavkaz.png');
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
   }
+
   &__title {
     font-size: 42px;
     font-weight: bold;
