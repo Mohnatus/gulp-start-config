@@ -1,5 +1,8 @@
 extend ../templates/main.pug
 
+include ../landing/header.pug
+include ../new-shop/header.pug
+
 block topHead
 	-var styleFile = "style.css"
 	-var title = "Page title"
@@ -10,6 +13,10 @@ block bottomHead
 block topBody
 
 block content
+	.landing.new-shop.fix-header
+		+landingHeader({class:"white"}, {type: "menu", data: [{"link": "", "title": "Скидка 10%"}, {"link": "", "title": "Акции"}]})
+		main
+			+newShopHeader
 
 block bottomBody
 

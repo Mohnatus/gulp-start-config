@@ -77,27 +77,28 @@ $thirdHeaderTextTransform: uppercase;
 // buttons
 $buttonFontFamily: inherit;
 
-$buttonBorderWidth: 2px;
+$buttonBorderWidth: 0px;
 $buttonBorderStyle: solid;
 $buttonBorderColor: white;
-$buttonHoverBorderWidth: 2px;
+$buttonHoverBorderWidth: 0px;
 $buttonHoverBorderStyle: solid;
 $buttonHoverBorderColor: $secondColor;
 
 $buttonBoxShadow: none;
 $buttonHoverBoxShadow: none;
 $buttonBorderRadius: 0px;
-$buttonTextTransform: uppercase;
+$buttonTextTransform: normal;
 $buttonLetterSpacing: 0.03em;
 
 
 $bigButtonMinWidth: 200px;
 $bigButtonHeight: 60px;
 $bigButtonPadding: 0 25px;
-$bigButtonFontSize: 16px;
+$bigButtonFontSize: 25px;
+$bigButtonFontWeight: normal;
 
-$mediumButtonMinWidth: 200px;
-$mediumButtonHeight: 50px;
+$mediumButtonMinWidth: 210px;
+$mediumButtonHeight: 70px;
 $mediumButtonPadding: 0 25px;
 $mediumButtonFontSize: 26px;
 

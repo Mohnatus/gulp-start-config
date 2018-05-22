@@ -116,10 +116,10 @@ gulp.task('watcher', function() {
     gulp.start('moveLibs');
     gulp.start('es6');
   });
-  gupl.watch('./src/data/**/*.*', (event, sb) => {
+  gulp.watch('./src/data/**/*.*', (event, sb) => {
     gulp.start('moveData');
   });
-  gupl.watch('./src/media/**/*.*', (event, sb) => {
+  gulp.watch('./src/media/**/*.*', (event, sb) => {
     gulp.start('media');
   });
 });

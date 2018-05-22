@@ -37,3 +37,11 @@
 
   &, &:focus, &:hover { outline: none; }
 }
+
+.hiddenbox {
+  &__title { display: none; }
+  &__content { display: block; }
+
+  [data-hidden] &__content { display: none; }
+  [data-hidden] &__title { display: block; }
+}

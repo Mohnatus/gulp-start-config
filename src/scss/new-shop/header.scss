@@ -1,0 +1,33 @@
+.new-shop {
+  &__header {
+    background: $deepBlueColor;
+    height: 640px;
+    color: white;
+    padding-top: 80px;
+  }
+  &__title {
+    font-size: 42px;
+    font-weight: bold;
+    max-width: 475px;
+  }
+  &__description {
+    font-size: 18px;
+    margin: 40px 0;
+    max-width: 475px;
+  }
+  &__coupon-button {
+    @include button;
+    background: $firmBlueColor;
+    color: white;
+  }
+  &__coupon-info {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 4px;
+
+    .hiddenbox__title {
+      text-decoration: underline;
+      &:hover { text-decoration: none; }
+    }
+  }
+}
