@@ -1,6 +1,7 @@
 include ../configs/config.pug
 include ../elements/head.pug
 include ../elements/bitrixAuth.pug
+include ../elements/links.pug
 include ../elements/analytics.pug
 
 -var projectName = 'pratchett';
@@ -8,16 +9,18 @@ include ../elements/analytics.pug
 
 if mode === "production"
   +bitrixHeader
+  
 doctype html
 html(lang="ru")
   head
     block topHead
     +head
     block bottomHead
-    if mode === "production"
+    if needAnalytics
+      +jQuery
       +headAnalytics
   body
-    if mode === "production"
+    if needAnalytics
       +topBodyAnalytics
     block topBody
     block content
@@ -26,5 +29,5 @@ html(lang="ru")
       +bitrixAuthScripts
     
     block bottomBody
-    if mode === "production"
+    if needAnalytics
         +bottomBodyAnalytics
