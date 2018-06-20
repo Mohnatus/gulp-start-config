@@ -1,5 +1,5 @@
 mixin landingHeader(logo, menu)
-  include logo.pug
+  include ../elements/logo.pug
   include social.pug
   include menu.pug
 
@@ -11,4 +11,4 @@ mixin landingHeader(logo, menu)
           +socialList
       else
         .landing-header__menu
-          +customMenu(menu, 'header-menu')
+          +customMenu(menu.data, 'header-menu')

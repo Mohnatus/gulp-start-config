@@ -2,7 +2,7 @@ mixin logo1()
   - var className = logo.class || "blue"
   - var width = logo.width || 247
   - var height = logo.height || ""
-  svg(width=width height=height viewBox="0 0 247 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="transparent" class=className)
+  svg(width=width height?height=height || "" viewBox="0 0 247 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="transparent" class=className)
     style.
       .white #logo-text { fill: white; }
       .white #big-logo { fill: white; }
@@ -134,7 +134,7 @@ mixin logo2(logo)
   - var className = logo.class || "blue"
   - var width = logo.width || 102
   - var height = logo.height || ""
-  svg(width=width height=height viewBox="0 0 102 30" fill="none" xmlns="http://www.w3.org/2000/svg")
+  svg(width=width viewBox="0 0 102 30" fill="none" xmlns="http://www.w3.org/2000/svg")
     style.
       #big-logo { fill: white; }
       .blue #big-logo { fill: #26A9E0; }

@@ -13,6 +13,10 @@
 @import './base/helpers.scss'; // like text-center
 @import './base/buttons.scss'; // buttons styles, using custom.scss
 
+@import './landing/base.scss';
+@import './landing/main.scss';
+@import './landing/runningTitles.scss';
+
 // @import './base/parts/auth.scss';
 
 

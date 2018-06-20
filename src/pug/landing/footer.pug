@@ -1,0 +1,9 @@
+mixin landingFooter(data)
+  include social.pug
+  include menu.pug
+  -var className = 'landing-footer'
+  footer(class=className)
+    .container
+      +customMenu(data.menu)
+      .landing-footer__right
+        +socialList
