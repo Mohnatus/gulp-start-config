@@ -6,9 +6,9 @@ mixin landingHeader(logo, menu)
   header.landing-header
     .container
       +logo(logo)
-      if menu.type == 'social'
+      if menu && menu.type == 'social'
         .landing-header__menu
           +socialList
-      else
+      else if menu
         .landing-header__menu
           +customMenu(menu.data, 'header-menu')

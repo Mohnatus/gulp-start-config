@@ -6,9 +6,7 @@ block topHead
 	include ../elements/links.pug
 	include ../landing/header.pug
 	include ../landing/footer.pug
-	include ../new-shop/header.pug
-	include ../new-shop/map.pug
-	include ../new-shop/rules.pug
+
 	-var styleFile = "style.css"
 	-var title = "Page title"
 	-var description = "..description"
@@ -31,6 +29,10 @@ block topHead
 				link: '/collections/'
 			}
 		];
+		var headerMenu = [
+			{"link": "", "title": "Скидка 10%"}, 
+			{"link": "", "title": "Акции"}
+		]
 
 block bottomHead
 	+jQuery
@@ -40,35 +42,13 @@ block topBody
 
 block content
 	.landing.new-shop.fix-header
-		+landingHeader({class:"white"}, {type: "menu", data: [{"link": "", "title": "Скидка 10%"}, {"link": "", "title": "Акции"}]})
+		+landingHeader({class:"white"}, {type: "menu", data: headerMenu})
 		main
-			+newShopHeader
-			+newShopInfo
-			+newShopRules
+
 		+landingFooter({menu: footerMenu})
 
 block bottomBody
-	script.
-		$(document).ready(function() {
-			$('.hiddenbox__title').click(function() {
-				$(this).parent().removeAttr('data-hidden');
-			});
-		});
-		var myMap;
-		var lat = 55.76;
-		var lng = 37.64;
-		ymaps.ready(function() {
-			myMap = new ymaps.Map('map', {
-				center: [lat, lng],
-				controls: [],
-				zoom: 11
-			});
-			myPlacemark = new ymaps.Placemark([lat, lng], { 
-				hintContent: 'Москва!', 
-				balloonContent: 'Столица России' 
-			});
-			myMap.geoObjects.add(myPlacemark);
-		});
+	
 
 		
 

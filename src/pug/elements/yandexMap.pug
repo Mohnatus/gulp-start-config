@@ -1,0 +1,17 @@
+mixin yandexMap
+  script.
+		var myMap;
+		var lat = 55.76;
+		var lng = 37.64;
+		ymaps.ready(function() {
+			myMap = new ymaps.Map('map', {
+				center: [lat, lng],
+				controls: [],
+				zoom: 11
+			});
+			myPlacemark = new ymaps.Placemark([lat, lng], { 
+				hintContent: 'Москва!', 
+				balloonContent: 'Столица России' 
+			});
+			myMap.geoObjects.add(myPlacemark);
+		});
