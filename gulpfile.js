@@ -19,6 +19,8 @@ const pugTask = require('./gulptasks/pug.js')(config, sync);
 const scssTask = require('./gulptasks/scss.js')(config, sync);
 const jsTask = require('./gulptasks/js.js')(config, sync);
 
+exports.clean = cleanTask;
+
 exports.pug = pugTask;
 exports.scss = scssTask;
 exports.js = jsTask;
