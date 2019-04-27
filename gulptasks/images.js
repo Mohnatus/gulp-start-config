@@ -1,6 +1,8 @@
 const { src, dest, parallel, watch } = require("gulp");
 const imagemin = require("gulp-imagemin");
 const filesize = require("gulp-filesize");
+const imageminJpegRecompress = require("imagemin-jpeg-recompress");
+const pngquant = require("pngquant");
 const plumber = require("gulp-plumber");
 
 const taskWrapper = (config, sync) => {
@@ -14,6 +16,13 @@ const taskWrapper = (config, sync) => {
         .pipe(imagemin([
             imagemin.gifsicle({interlaced: true}),
             imagemin.jpegtran({progressive: true}),
+            imageminJpegRecompress({
+                loops: 5,
+                min: 65,
+                max: 70,
+                quality:'medium',
+                method: 'smallfry'
+            }),
             imagemin.optipng({optimizationLevel: 7}),
             imagemin.svgo({
                 plugins: [
@@ -21,8 +30,14 @@ const taskWrapper = (config, sync) => {
                     {cleanupIDs: false},
                     {removeTitle: true}
                 ]
+            }),
+            pngquant({
+                quality: '55-60',
+                speed: 5
             })
-        ]))
+        ], {
+            verbose: true
+        }))
         .pipe(dest(config.dest + '/' + config.images.dest))
         .pipe(filesize());
     cb();

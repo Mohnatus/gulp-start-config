@@ -36,8 +36,10 @@
     "gulp-uglifycss": "^1.1.0",
     "gulp-using": "^0.1.1",
     "gulp-webmake": "0.0.41",
+    "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-jpegtran": "^6.0.0",
     "jpegtran-bin": "^4.0.0",
+    "pngquant": "^2.0.1",
     "recast": "^0.14.7",
     "through2": "^3.0.1"
   },
