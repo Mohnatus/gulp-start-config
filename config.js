@@ -3,6 +3,7 @@
 module.exports = {
   src: 'src',
   dest: 'dist',
+  watch: true,
 
   tasks: {
     pug: true,
@@ -13,7 +14,8 @@ module.exports = {
   },
 
   pug: {
-    src: ['pug/pages/**.pug'],
+    src: ['pug/pages/**/*.pug'],
+    watch: ['pug/**/*.*'],
     settings: {
       pretty: true,
       locals: {
@@ -24,7 +26,8 @@ module.exports = {
   },
 
   scss: {
-    src: ['scss/**.*'],
+    src: ['scss/**/*.*'],
+    watch: ['scss/**/*.*'],
     settings: {
       outputStyle: 'compressed', // 'compressed', 'nested', 'expanded', 'compact'
       indentType: 'space', // 'space', 'tab'
@@ -37,14 +40,17 @@ module.exports = {
 
   js: {
     src: 'js',
+    watch: ['js/**/*.*'],
     groups: [
       {
         name: 'libs.js',
-        files: ['libs/**.*']
+        files: ['libs/**/*.*'],
+        uglify: false,
       },
       {
         name: 'bundle.js',
-        files: ['scripts/**.*']
+        files: ['scripts/**/*.*'],
+        uglify: true,
       }
     ],
     settings: {},
