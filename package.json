@@ -14,6 +14,7 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "browser-sync": "^2.23.7",
+    "delete": "^1.1.0",
     "gulp": "^4.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",

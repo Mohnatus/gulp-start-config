@@ -1,11 +1,18 @@
 const config = require('./config.js');
 
-const { parallel, series } = require('gulp');
+const { series } = require('gulp');
+
 const sync = require('browser-sync').create();
-const serve = () => {
+const serveTask = (cb) => {
   sync.init({
     server: config.dest
   });
+  cb();
+};
+
+const del = require('delete');
+const cleanTask = (cb) => {
+  del([config.dest + '/**/*.*'], cb);
 };
 
 const pugTask = require('./gulptasks/pug.js')(config, sync);
@@ -16,4 +23,4 @@ exports.pug = pugTask;
 exports.scss = scssTask;
 exports.js = jsTask;
 
-exports.default = series(serve, parallel(pugTask, scssTask, jsTask));
+exports.default = series(cleanTask, pugTask, scssTask, jsTask, serveTask);
