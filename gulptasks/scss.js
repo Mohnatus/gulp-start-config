@@ -7,6 +7,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const uglify = require('gulp-uglifycss');
 const rename = require('gulp-rename');
+const plumber = require("gulp-plumber");
 
 const taskWrapper = (config, sync) => {
     const srcFiles = config.scss.src.map(file => config.src + '/' + file);
@@ -14,6 +15,7 @@ const taskWrapper = (config, sync) => {
 
     const task = (cb) => {
         src(srcFiles)
+            .pipe(plumber())
             .pipe(gulpif(config.scss.sourcemaps, sourcemaps.init()))
             .pipe(scss(config.scss.settings || {}).on('error', scss.logError))
             .pipe(gulpif(config.scss.sourcemaps, sourcemaps.write()))

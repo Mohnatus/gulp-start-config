@@ -5,9 +5,15 @@ const uglify = require('gulp-uglify');
 const filesize = require('gulp-filesize');
 const rename = require('gulp-rename');
 const gulpif = require('gulp-if');
+const eslint = require('gulp-eslint');
+const plumber = require("gulp-plumber");
 
 const groupTask = group => (cb) => {
     src(group.files)
+        .pipe(plumber())
+        .pipe(gulpif(group.lint, eslint()))
+        .pipe(gulpif(group.lint, eslint.format()))
+        .pipe(gulpif(group.lint, eslint.failAfterError()))
         .pipe(concat(group.name))
         .pipe(babel({
             presets: ['@babel/env']
@@ -38,9 +44,6 @@ const taskWrapper = (config, sync) => {
         });
     }
         
-
-    
-
     return task;
 };
 

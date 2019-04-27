@@ -1,0 +1,27 @@
+{
+    "rules": {
+        "indent": ["error", 2],
+        "no-inline-comments": "off",
+        "semi": "error",
+        "quotes": ["error", "double"]
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+
+    "env": {
+        "es6": true
+    },
+    "overrides": [
+        {
+            "files": ["gulptasks/*.js"],
+            "rules": {
+                "require-jsdoc": "off",
+                "no-unused-expressions": "off",
+                "quotes": 0,
+                "indent": 0,
+                "semi": 0
+            }
+        }
+    ]
+}

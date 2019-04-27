@@ -10,7 +10,8 @@ module.exports = {
     html: true,
     scss: true,
     es: true,
-    images: true
+    images: true,
+    assets: true
   },
 
   pug: {
@@ -52,10 +53,33 @@ module.exports = {
         name: 'bundle.js',
         files: ['scripts/**/*.*'],
         uglify: true,
+        lint: true
       }
     ],
     settings: {},
     sourcemaps: true,
     dest: 'js'
+  },
+
+  images: {
+    src: ['images/**/*.*'],
+    watch: ['images/**/*.*'],
+    dest: 'images',
+    settings: {
+      jpg: {},
+      png: {},
+      gif: {},
+      svg: {}
+    }
+  },
+
+  assets: {
+    watch: ['data/**/*.*'],
+    groups: [
+      {
+        files: ['data/**/*.*'],
+        dest: 'data'
+      }
+    ]
   }
 };
