@@ -29,13 +29,14 @@ module.exports = {
     src: ['scss/**/*.*'],
     watch: ['scss/**/*.*'],
     settings: {
-      outputStyle: 'compressed', // 'compressed', 'nested', 'expanded', 'compact'
+      outputStyle: 'expanded', // 'compressed', 'nested', 'expanded', 'compact'
       indentType: 'space', // 'space', 'tab'
       indentWidth: 2,
       linefeed: 'lf', // 'cr', 'crlf', 'lf', 'lfcr'
     },
     dest: 'css',
-    //sourcemaps: true,
+    sourcemaps: true,
+    uglify: true
   },
 
   js: {

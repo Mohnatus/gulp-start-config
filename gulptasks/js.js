@@ -2,6 +2,7 @@ const { src, dest, parallel, watch } = require('gulp');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const filesize = require('gulp-filesize');
 const rename = require('gulp-rename');
 const gulpif = require('gulp-if');
 
@@ -12,9 +13,11 @@ const groupTask = group => (cb) => {
             presets: ['@babel/env']
         }))
         .pipe(dest(group.dest))
+        .pipe(filesize())
         .pipe(gulpif(group.uglify, uglify()))
         .pipe(gulpif(group.uglify, rename({ extname: '.min.js' })))
-        .pipe(gulpif(group.uglify, dest(group.dest)));
+        .pipe(gulpif(group.uglify, dest(group.dest)))
+        .pipe(gulpif(group.uglify, filesize()));
     cb();
 }
 

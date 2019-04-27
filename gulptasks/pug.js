@@ -1,5 +1,6 @@
 const { src, dest, watch } = require('gulp');
 const pug = require('gulp-pug');
+const filesize = require('gulp-filesize');
 
 const taskWrapper = (config, sync) => {
   const srcFiles = config.pug.src.map(file => config.src + '/' + file);
@@ -7,7 +8,8 @@ const taskWrapper = (config, sync) => {
   const task = cb => {
     src(srcFiles)
       .pipe(pug(config.pug.settings || {}))
-      .pipe(dest(config.dest + '/' + config.pug.dest));
+      .pipe(dest(config.dest + '/' + config.pug.dest))
+      .pipe(filesize());
     cb();
   }
 
