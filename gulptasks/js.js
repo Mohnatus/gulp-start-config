@@ -18,7 +18,7 @@ const groupTask = group => (cb) => {
     cb();
 }
 
-const taskWrapper = config => {
+const taskWrapper = (config, sync) => {
     const jsSrc = config.src + '/' + config.js.src;
     const groups = config.js.groups.map(group => {
         group.files = group.files.map(file => jsSrc + '/' + file);  
@@ -28,9 +28,15 @@ const taskWrapper = config => {
 
     const task = parallel(groups);
 
-    console.log(config.js.watch.map(file => config.src + '/' + file))
-    if (config.watch)
-        watch(config.js.watch.map(file => config.src + '/' + file), task);
+    if (config.watch) {
+        watch(config.js.watch.map(file => config.src + '/' + file), { events: 'change'}, (cb) => {
+            task(cb);
+            sync.reload(cb);
+        });
+    }
+        
+
+    
 
     return task;
 };

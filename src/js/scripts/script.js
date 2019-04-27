@@ -1,2 +1,3 @@
-let a = 48;
+let a = 42;
 const b = param => console.log(param);
+b(33);

@@ -3,7 +3,7 @@ const scss = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
 
-const taskWrapper = config => {
+const taskWrapper = (config, sync) => {
     const srcFiles = config.scss.src.map(file => config.src + '/' + file);
     const destPath = config.dest + '/' + config.scss.dest;
 
@@ -16,9 +16,12 @@ const taskWrapper = config => {
         cb();
     }
 
-    console.log(config.scss.watch.map(file => config.src + '/' + file))
+
     if (config.watch)
-        watch(config.scss.watch.map(file => config.src + '/' + file), task);
+        watch(config.scss.watch.map(file => config.src + '/' + file), { events: 'change'}, (cb) => {
+            task(cb);
+            sync.reload(cb);
+        });
      
     return task;
 }
