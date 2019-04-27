@@ -1,18 +1,12 @@
-//@import './base/fonts/PT-Sans-Google.scss';
-// @import './base/fonts/PT-Sans-Caption-Google.scss';
-@import './base/fonts/IBMPlexSans-Google.scss';
-// @import './base/fonts/Comfortaa-Google.scss';
+@import "_vars.scss";
 
-@import './base/vars.scss'; // variables
-@import './custom.scss'; // user config
+body {
+    background: $greenColor;
 
-@import './base/mixins.scss'; // using vars.scss, custom.scss
-@import './base/base.scss'; // html, body, using custom.scss
-@import './base/helpers.scss'; // like text-center
-@import './base/text-classes.scss'; // like text-center
-//@import './base/buttons.scss'; // buttons styles, using custom.scss
-
-// @import './base/parts/auth.scss';
+    h2 {
+        font-size: 2 * 10px;
+    }
+}
 
 
 

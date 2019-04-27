@@ -1,43 +1,54 @@
-let productionSourceFolder = '/ii/';
 
-let media = 'media/',
-    productionMedia = productionSourceFolder + media,
-    css = 'css/',
-    productionCss = productionSourceFolder + css,
-    js = 'js/',
-    productionJs = productionSourceFolder + js;
 
 module.exports = {
-  production: {
-    mode: 'production',
-    pugData: {
-      mode: 'production',
-      mediaFolder: productionMedia,
-      cssFolder: productionCss,
-      jsFolder: productionJs
-    },
-    scssData: `
-      $mediaFolder: "${productionMedia}";
-      $cssFolder: "${productionCss}";
-      $jsFolder: "${productionJs}";
-    `,
-    outputFolder: "./production/",
-    mediaName: 'media/'
+  src: 'src',
+  dest: 'dist',
+
+  tasks: {
+    pug: true,
+    html: true,
+    scss: true,
+    es: true,
+    images: true
   },
-  development: {
-    mode: 'development',
-    pugData: {
-      mode: 'development',
-      mediaFolder: media,
-      cssFolder: css,
-      jsFolder: js
+
+  pug: {
+    src: 'pug/pages/**.pug',
+    settings: {
+      pretty: true,
+      locals: {
+        helloText: "hello, world!!!"
+      },
     },
-    scssData: `
-      $mediaFolder: "../${media}";
-      $cssFolder:" ${css}";
-      $jsFolder: "${js}";
-    `,
-    outputFolder: './dist/',
-    mediaName: 'media'
+    dest: ''
+  },
+
+  scss: {
+    src: 'scss/**.*',
+    settings: {
+      outputStyle: 'compressed', // 'compressed', 'nested', 'expanded', 'compact'
+      indentType: 'space', // 'space', 'tab'
+      indentWidth: 2,
+      linefeed: 'lf', // 'cr', 'crlf', 'lf', 'lfcr'
+    },
+    dest: 'css',
+    sourcemaps: true,
+  },
+
+  js: {
+    src: 'js',
+    groups: [
+      {
+        name: 'libs.js',
+        files: ['libs/**.*']
+      },
+      {
+        name: 'bundle.js',
+        files: ['scripts/**.*']
+      }
+    ],
+    settings: {},
+    sourcemaps: true,
+    dest: 'js'
   }
 };
