@@ -13,7 +13,7 @@ module.exports = {
   },
 
   pug: {
-    src: 'pug/pages/**.pug',
+    src: ['pug/pages/**.pug'],
     settings: {
       pretty: true,
       locals: {
@@ -24,7 +24,7 @@ module.exports = {
   },
 
   scss: {
-    src: 'scss/**.*',
+    src: ['scss/**.*'],
     settings: {
       outputStyle: 'compressed', // 'compressed', 'nested', 'expanded', 'compact'
       indentType: 'space', // 'space', 'tab'
@@ -32,7 +32,7 @@ module.exports = {
       linefeed: 'lf', // 'cr', 'crlf', 'lf', 'lfcr'
     },
     dest: 'css',
-    sourcemaps: true,
+    //sourcemaps: true,
   },
 
   js: {

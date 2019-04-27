@@ -29,7 +29,8 @@
     "gulp-uglify": "^3.0.0",
     "gulp-using": "^0.1.1",
     "gulp-webmake": "0.0.41",
-    "recast": "^0.14.7"
+    "recast": "^0.14.7",
+    "through2": "^3.0.1"
   },
   "dependencies": {}
 }
