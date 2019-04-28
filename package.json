@@ -1,15 +1,19 @@
 {
-  "name": "party",
+  "name": "gulp-start",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gulp markup project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulps": "node C:/Users/korneeva.m/AppData/Roaming/npm/node_modules/gulp/bin/gulp.js"
+    "start": "gulp"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["gulp", "gulpfile"],
+  "author": "Mohnatus",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mohnatus/gulpStartProject"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
