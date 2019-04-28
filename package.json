@@ -22,7 +22,9 @@
     "gulp-clean": "^0.4.0",
     "gulp-cli": "^2.2.0",
     "gulp-concat": "^2.6.1",
+    "gulp-deploy-git": "^0.5.3",
     "gulp-es6-module-transpiler": "^0.2.2",
+    "gulp-eslint": "^5.0.0",
     "gulp-filesize": "0.0.6",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^5.0.3",
@@ -42,8 +44,5 @@
     "pngquant": "^2.0.1",
     "recast": "^0.14.7",
     "through2": "^3.0.1"
-  },
-  "dependencies": {
-    "gulp-eslint": "^5.0.0"
   }
 }

@@ -2,8 +2,7 @@
     "rules": {
         "indent": ["error", 2],
         "no-inline-comments": "off",
-        "semi": "error",
-        "quotes": ["error", "double"]
+        "semi": "error"
     },
     "parserOptions": {
         "ecmaVersion": 2017
@@ -14,11 +13,10 @@
     },
     "overrides": [
         {
-            "files": ["gulptasks/*.js"],
+            "files": ["gulptasks/*.js", "gulpfile.js"],
             "rules": {
                 "require-jsdoc": "off",
                 "no-unused-expressions": "off",
-                "quotes": 0,
                 "indent": 0,
                 "semi": 0
             }
