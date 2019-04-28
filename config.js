@@ -9,7 +9,7 @@ module.exports = {
     pug: true,
     html: true,
     scss: true,
-    es: true,
+    js: true,
     images: true,
     assets: true
   },
