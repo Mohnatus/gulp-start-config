@@ -3,7 +3,7 @@
 module.exports = {
   src: 'src',
   dest: 'dist',
-  watch: true,
+  watch: false,
 
   tasks: {
     pug: true,

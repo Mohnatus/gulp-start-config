@@ -5,6 +5,8 @@ const imageminJpegRecompress = require("imagemin-jpeg-recompress");
 const pngquant = require("pngquant");
 const plumber = require("gulp-plumber");
 
+const needWatch = process.argv.indexOf("--watch") !== -1;
+
 const taskWrapper = (config, sync) => {
 
   const srcFiles = config.images.src.map(file => config.src + "/" + file);
@@ -43,7 +45,7 @@ const taskWrapper = (config, sync) => {
     cb();
   }
 
-  if (config.watch)
+  if (needWatch)
     watch(config.images.watch.map(file => config.src + '/' + file), { events: 'change'}, (cb) => {
         task(cb);
         sync.reload(cb);

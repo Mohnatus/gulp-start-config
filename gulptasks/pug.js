@@ -3,6 +3,8 @@ const pug = require('gulp-pug');
 const filesize = require('gulp-filesize');
 const plumber = require("gulp-plumber");
 
+const needWatch = process.argv.indexOf("--watch") !== -1;
+
 const taskWrapper = (config, sync) => {
   const srcFiles = config.pug.src.map(file => config.src + '/' + file);
 
@@ -15,7 +17,7 @@ const taskWrapper = (config, sync) => {
     cb();
   }
 
-  if (config.watch)
+  if (needWatch)
     watch(config.pug.watch.map(file => config.src + '/' + file), { events: 'change'}, (cb) => {
       task(cb);
       sync.reload(cb);

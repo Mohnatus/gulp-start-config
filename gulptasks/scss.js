@@ -9,6 +9,8 @@ const uglify = require('gulp-uglifycss');
 const rename = require('gulp-rename');
 const plumber = require("gulp-plumber");
 
+const needWatch = process.argv.indexOf("--watch") !== -1;
+
 const taskWrapper = (config, sync) => {
     const srcFiles = config.scss.src.map(file => config.src + '/' + file);
     const destPath = config.dest + '/' + config.scss.dest;
@@ -35,7 +37,7 @@ const taskWrapper = (config, sync) => {
     }
 
 
-    if (config.watch)
+    if (needWatch)
         watch(config.scss.watch.map(file => config.src + '/' + file), { events: 'change'}, (cb) => {
             task(cb);
             sync.reload(cb);
